@@ -142,7 +142,7 @@ class EmailHandler(Handler):
 
         body_text = get_template(self.template_text).render(msg.context)
         email = EmailMultiAlternatives(
-            subject=self.subject,
+            subject=str(self.subject),
             body=body_text,
             from_email=settings.EMAIL_FROM,
             to=msg.recipients,
@@ -187,7 +187,7 @@ class SESHandler(Handler):
             },
             Message={
                 'Subject': {
-                    'Data': self.subject,
+                    'Data': str(self.subject),
                     'Charset': self.charset,
                 },
                 'Body': {
