@@ -26,8 +26,13 @@ SETTINGS = {
     # 'ROOT_URLCONF': 'registration.backends.hmac.urls',
     'DATABASES': {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-        },
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ.get('POSTGRES_DB'),
+            'USER':  os.environ.get('POSTGRES_USER'),
+            'PASSWORD':  os.environ.get('POSTGRES_PASSWORD'),
+            'HOST':  os.environ.get('POSTGRES_HOST'),
+            'PORT':  os.environ.get('POSTGRES_PORT'),
+        }
     },
     'MIDDLEWARE': (
         'django.middleware.common.CommonMiddleware',

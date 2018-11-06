@@ -16,7 +16,7 @@ Celery support is also included.
 
 - Python3.6.0+
 - Django 2.0.0+
-- django-jsonfield 1.0.0+
+- psycopg2 2.7.0+
 
 Optional requirements:
 
